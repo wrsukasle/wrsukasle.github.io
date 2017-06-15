@@ -1,8 +1,8 @@
 
 self.addEventListener('install', function(e) {
-	alert('Install Event: ' + e);
+	console.log('Install Event: ' + e);
 });
 
 self.addEventListener('activate', function(e) {
-	alert('Activate Event: ' + e);
+	console.log('Activate Event: ' + e);
 });
