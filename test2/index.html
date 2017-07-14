@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="user_management">
+	<head>
+		<title>Assignment 2</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	</head>
+	<body ng-controller="main">
+		<div class="container">
+			<div class="row">&nbsp;</div>
+			
+			<!-- Edit form -->
+			<div class="row">
+				<form class="form-horizontal">
+					
+					<div class="form-group">
+						<label for="first_name" class="col-sm-2 control-label">First Name: </label>
+						<div class="col-sm-5">
+							<input type="text" value="{{edit_user.first_name}}" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="last_name" class="col-sm-2 control-label">Last Name</label>
+						<div class="col-sm-5">
+							<input type="text" value="{{edit_user.last_name}}" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="gender" class="col-sm-2 control-label">Gender</label>
+						<dir class="col-sm-2">
+							<select class="form-control" id="gender">
+								<option value="">-- Select Gender --</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</dir>
+					</div>
+
+					<div class="form-group">
+						<label for="address" class="col-sm-2 control-label">Address</label>
+						<div class="col-sm-5">
+							<textarea class="form-control" rows="3" id="address"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="dob" class="col-sm-2 control-label">Date of Birth</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" id="dob" name="dob" placeholder="yyyy-mm-dd">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-10">
+							<button ng-click="save_edit_form()" class="btn btn-primary">Save</button>
+							<button ng-click="cancel_edit()" class="btn btn-danger">Cancel</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="row">&nbsp;</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<a ng-click="" class="btn btn-success">
+						<i class="fa fa-plus" aria-hidden="true"></i></i> Add Person
+					</a>
+				</div>
+			</div>
+			<dir class="row">
+				<div class="col-lg-12">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Gender</th>
+								<th>Addres</th>
+								<th>Date of Birth</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in users">
+								<td>{{user.id}}</td>
+								<td>{{user.first_name}}</td>
+								<td>{{user.last_name}}</td>
+								<td>{{user.gender}}</td>
+								<td>{{user.address}}</td>
+								<td>{{user.dob}}</td>
+								<td>
+									<a ng-click="edit_user(user)" class="btn btn-primary">
+										<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+									</a> | 
+									<a  ng-click="delete_user(user.id)" class="btn btn-danger">
+										<i class="fa fa-trash-o" aria-hidden="true"></i></i> Delete</a>
+								</td>
+							</tr>
+						</tbody>
+						<tfooter>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Gender</th>
+								<th>Addres</th>
+								<th>Date of Birth</th>
+								<th>Action</th>
+							</tr>
+						</tfooter>				
+					</table>
+				</div>
+			</div>
+		</dir>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>		
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
